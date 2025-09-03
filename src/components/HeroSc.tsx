@@ -1,11 +1,35 @@
 import React from "react";
+import Image from "next/image";
 
 const HeroSc = () => {
   return (
-    <div className="mt-[70px]">
+    <div className="mt-[70px] px-8 ">
       <Bg />
-      <h1>Hi am mohamed Saeed</h1>
-      <h1 className="text-4xl font-bold">I am a software engineer BBBBBBB</h1>
+      <h1 className="text-4xl font-bold ]">
+        Hey, 👋 I&apos;m a Full Stack Developer
+      </h1>
+      <h1 className="text-9xl font-bold mt-3 text-[#7AF298]">Mohamed Saeed</h1>
+      <div className="absolute bottom-[10%] left-[50%] transform -translate-x-1/2  drop-shadow-2xl rounded-full">
+        <Image
+          src="/img2.png"
+          alt="hero"
+          width={300}
+          height={300}
+          className="rounded-full"
+        />
+      </div>
+      <div className="absolute bottom-0 left-0 p-5">
+        <h1>E info@brunosimon.com </h1>
+        <h1>T +39 03 463 853 02</h1>
+      </div>
+      <div className="absolute bottom-0 right-0 max-w-[330px] p-5">
+        <p>
+          I craft fast, scalable, and user-friendly web applications with modern
+          JavaScript frameworks — combining React on the frontend with robust
+          server-side solutions using Node.js.
+        </p>
+        <div className="pt-24">/ Twitter / Github / LinkedIn / Youtube </div>
+      </div>
     </div>
   );
 };
