@@ -1,9 +1,10 @@
-import Image from "next/image";
+import HeroSc from "@/components/HeroSc";
 
 export default function Home() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <HeroSc />
+      <div className="h-[1000px]"></div>
     </div>
   );
 }
