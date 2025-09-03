@@ -7,8 +7,27 @@ import { GSDevTools } from "gsap/GSDevTools";
 
 gsap.registerPlugin(useGSAP, GSDevTools);
 const Nav = () => {
+  useGSAP(() => {
+    gsap.fromTo(
+      "#nav-box",
+      {
+        yPercent: -100,
+        opacity: 0,
+      },
+      {
+        delay: 0.5,
+        yPercent: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+  }, []);
   return (
-    <div className="fixed top-0 left-0 right-0   flex justify-between p-2 py-5 font-bold text-xl ">
+    <div
+      id="nav-box"
+      className="fixed top-0 left-0 right-0   flex justify-between p-2 py-5 font-bold text-xl "
+    >
       <div>MOHAMED SAEED </div>
       <Menu />
     </div>

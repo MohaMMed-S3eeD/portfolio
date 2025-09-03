@@ -22,13 +22,9 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
     Tl.fromTo(
       "#image-box",
       {
-        yPercent: 50,
-        scale: 0.5,
         opacity: 0,
       },
       {
-        yPercent: 0,
-        scale: 1,
         opacity: 1,
         duration: 1.5,
         ease: "power2.inOut",

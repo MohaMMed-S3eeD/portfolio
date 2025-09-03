@@ -13,6 +13,7 @@ export default function Home() {
       ease: "power2.inOut",
     },
   });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [Tl, setTl] = useState(tl);
   return (
     <div>
