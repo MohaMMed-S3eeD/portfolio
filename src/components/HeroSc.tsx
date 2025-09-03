@@ -8,7 +8,8 @@ const HeroSc = () => {
   useGSAP(() => {
     gsap.to(".hero-text", {
       opacity: 1,
-      duration: 2,
+      duration: 1,
+      delay: 0.8,
       ease: "power2.inOut",
     });
   }, []);
