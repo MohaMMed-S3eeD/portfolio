@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 
-const Intros = () => {
+const Intros = ({ Tl }: { Tl: GSAPTimeline }) => {
   const [isComplete, setIsComplete] = useState(false);
   useGSAP(() => {
-    gsap.to(".intro-box", {
+    Tl.to(".intro-box", {
       x: gsap.utils.wrap(["-100%", "100%"]),
       stagger: 0.1,
       duration: 1,
