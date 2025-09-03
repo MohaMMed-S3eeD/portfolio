@@ -1,14 +1,24 @@
+"use client";
 import React from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 import Image from "next/image";
 
 const HeroSc = () => {
+  useGSAP(() => {
+    gsap.to(".hero-text", {
+      opacity: 1,
+      duration: 2,
+      ease: "power2.inOut",
+    });
+  }, []);
   return (
-    <div className="mt-[70px] px-8 ">
+    <div className="mt-[70px] px-8 hero-text opacity-0 ">
       <Bg />
       <h1 className="text-4xl font-bold ]">
         Hey, 👋 I&apos;m a Full Stack Developer
       </h1>
-      <h1 className="text-9xl font-bold mt-3 text-[#7AF298]">Mohamed Saeed</h1>
+      <h1 className="text-9xl font-bold mt-3 text-[#7AF298] ">MOHAMED SAEED</h1>
       <div className="absolute bottom-[10%] left-[50%] transform -translate-x-1/2  drop-shadow-2xl rounded-full">
         <Image
           src="/img2.png"
@@ -28,7 +38,7 @@ const HeroSc = () => {
           JavaScript frameworks — combining React on the frontend with robust
           server-side solutions using Node.js.
         </p>
-        <div className="pt-24">/ Twitter / Github / LinkedIn / Youtube </div>
+        <div className="pt-14">/ Twitter / Github / LinkedIn / Youtube </div>
       </div>
     </div>
   );

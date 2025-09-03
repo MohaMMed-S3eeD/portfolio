@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP, GSDevTools);
 const Nav = () => {
   return (
     <div className="fixed top-0 left-0 right-0   flex justify-between p-2 py-5 font-bold text-xl ">
-      <div>Mohamed Saeed</div>
+      <div >MOHAMED SAEED </div>
       <Menu />
     </div>
   );
