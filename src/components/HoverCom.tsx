@@ -61,7 +61,7 @@ const HoverCom = ({ children }: { children: React.ReactNode }) => {
       gsap.to(second.chars, {
         yPercent: 0,
         opacity: 1,
-        duration: 0.6,
+        duration: 0.7,
         ease: "power3.out",
         stagger: 0.1,
       });
@@ -70,7 +70,7 @@ const HoverCom = ({ children }: { children: React.ReactNode }) => {
       gsap.to(first.chars, {
         yPercent: -120,
         opacity: 0,
-        duration: 0.5,
+        duration: 0.7,
         ease: "power3.in",
         stagger: 0.1,
       });
@@ -88,7 +88,7 @@ const HoverCom = ({ children }: { children: React.ReactNode }) => {
       gsap.to(second.chars, {
         yPercent: 120,
         opacity: 0,
-        duration: 0.5,
+        duration: 0.7,
         ease: "power3.in",
         stagger: 0.1,
       });
@@ -97,7 +97,7 @@ const HoverCom = ({ children }: { children: React.ReactNode }) => {
       gsap.to(first.chars, {
         yPercent: 0,
         opacity: 1,
-        duration: 0.6,
+        duration: 0.7,
         ease: "power3.out",
         stagger: 0.1,
       });
@@ -111,7 +111,7 @@ const HoverCom = ({ children }: { children: React.ReactNode }) => {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <div ref={trackRef} className="will-change-transform">
+      <div ref={trackRef} className="will-change-transform cursor-pointer">
         <div className="hover-line">{children}</div>
         <div className="hover-line">{children}</div>
       </div>
