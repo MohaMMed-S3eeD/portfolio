@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { SplitText } from "gsap/SplitText";
 import { GSDevTools } from "gsap/GSDevTools";
+import HoverCom from "./HoverCom";
 gsap.registerPlugin(SplitText, ScrollTrigger, GSDevTools);
 const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
   useGSAP(() => {
@@ -155,13 +156,22 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
         <h1>E info@brunosimon.com </h1>
         <h1>T +39 03 463 853 02</h1>
       </div>
-      <div id="des-box" className="absolute bottom-0 right-0 max-w-[330px] p-5">
+      <div id="des-box" className="absolute bottom-0 right-0 max-w-[340px] p-5">
         <p id="description-box">
           I craft fast, scalable, and user-friendly web applications with modern
           JavaScript frameworks — combining React on the frontend with robust
           server-side solutions using Node.js.
         </p>
-        <div className="pt-14">/ Twitter / Github / LinkedIn / Youtube </div>
+        <div className="pt-14 flex gap-1">
+          <span className="text-[#7AF298]">/</span>
+          <HoverCom>Twitter</HoverCom>
+          <span className="text-[#7AF298]">/</span>
+          <HoverCom>Github</HoverCom>
+          <span className="text-[#7AF298]">/</span>
+          <HoverCom>LinkedIn</HoverCom>
+          <span className="text-[#7AF298]">/</span>
+          <HoverCom>Youtube</HoverCom>
+        </div>
       </div>
     </div>
   );
