@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import { GSDevTools } from "gsap/GSDevTools";
+import HoverCom from "./HoverCom";
 
 gsap.registerPlugin(useGSAP, GSDevTools);
 const Nav = () => {
@@ -75,11 +76,10 @@ const Menu = () => {
       </button>
       <div ref={contentRef}>
         <div className=" text-black px-8 pb-2 ">
-          <div>Home</div>
-          <div>About</div>
-          <div>Contact</div>
-          <div>Home</div>
-          <div>Home</div>
+          <HoverCom>Home</HoverCom>
+          <HoverCom>About</HoverCom>
+          <HoverCom>Contact</HoverCom>
+          <HoverCom>Blog</HoverCom>
         </div>
       </div>
     </div>

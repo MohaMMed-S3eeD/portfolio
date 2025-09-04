@@ -18,6 +18,7 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
     const split_name_text = SplitText.create("#name-text", {
       type: "chars",
     });
+
     // Image box animate
     Tl.fromTo(
       "#image-box",
@@ -45,6 +46,20 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
         ease: "expo.out",
       },
       "<0.5"
+    );
+    // Hand wave animate
+    Tl.fromTo(
+      "#hand-wave",
+      {},
+      {
+        rotation: -15,
+        yoyo: true,
+        repeat: 1,
+        transformOrigin: "bottom center",
+        duration: 0.8,
+        ease: "power2.inOut",
+      },
+      "<0.2"
     );
     // Name text animate
     Tl.fromTo(
@@ -115,7 +130,11 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
     <div className="mt-[70px] px-8 hero-text ">
       <Bg />
       <h1 id="top-text" className="text-4xl font-bold overflow-hidden">
-        Hey, 👋 I&apos;m a Full Stack Developer
+        Hey,
+        <span className="inline-block" id="hand-wave">
+          👋
+        </span>
+        I&apos;m a Full Stack Developer
       </h1>
       <h1 id="name-text" className="text-9xl font-bold mt-3 text-[#7AF298]">
         MOHAMED SAEED
