@@ -128,7 +128,7 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
     );
   }, []);
   return (
-    <div className="mt-[70px] px-8 hero-text ">
+    <div className="mt-[70px] px-8 hero-text relative min-h-[calc(100vh-75px)]">
       <Bg />
       <h1 id="top-text" className="text-4xl font-bold overflow-hidden">
         Hey,

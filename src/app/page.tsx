@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import HeroSc from "@/components/HeroSc";
 import Intros from "@/components/Intros";
+import Skills from "@/components/Skills";
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
     <div>
       <Intros Tl={Tl} />
       <HeroSc Tl={Tl} />
-      <div className="h-[1000px]"></div>
+      <Skills />  
     </div>
   );
 }
