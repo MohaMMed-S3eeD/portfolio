@@ -87,7 +87,6 @@ const Skills = () => {
       scrollTrigger: {
         trigger: "#hr",
         start: "top 90%",
-        markers: true,
       },
     });
   }, []);
