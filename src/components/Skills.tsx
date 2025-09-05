@@ -95,7 +95,9 @@ const Skills = () => {
       id="skills-section"
       className="max-w-[1200px] px-8 mx-auto h-screen flex flex-col justify-center mb-10"
     >
-      <h1 className=" text-[#7AF298] section-title">{"// Skills"}</h1>
+      <h1 className=" font-bold my-3 text-[#7AF298] section-title">
+        {"// Skills"}
+      </h1>
       <div className="flex gap-10 flex-col md:flex-row">
         <div className="flex-1">
           <Card
