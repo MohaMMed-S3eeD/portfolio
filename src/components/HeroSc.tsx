@@ -156,7 +156,10 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
         <h1>E info@brunosimon.com </h1>
         <h1>T +39 03 463 853 02</h1>
       </div>
-      <div id="des-box" className="hidden md:block absolute bottom-0 right-0 max-w-[340px] p-5">
+      <div
+        id="des-box"
+        className="hidden md:block absolute bottom-0 right-0 max-w-[340px] p-5"
+      >
         <p id="description-box">
           I craft fast, scalable, and user-friendly web applications with modern
           JavaScript frameworks — combining React on the frontend with robust
