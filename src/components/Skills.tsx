@@ -93,7 +93,7 @@ const Skills = () => {
   return (
     <div
       id="skills-section"
-      className="max-w-[1200px] px-8 mx-auto h-screen flex flex-col justify-center mb-10"
+      className="max-w-[1200px] px-8 mx-auto h-screen flex flex-col justify-center "
     >
       <h1 className=" font-bold my-3 text-[#7AF298] section-title">
         {"// Skills"}

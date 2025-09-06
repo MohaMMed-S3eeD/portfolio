@@ -7,6 +7,7 @@ import Intros from "@/components/Intros";
 import Skills from "@/components/Skills";
 import ExploreWork from "@/components/ExploreWork";
 import Services from "@/components/Service";
+import Process from "@/components/Process";
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
@@ -25,6 +26,8 @@ export default function Home() {
       <Skills />
       <ExploreWork />
       <Services />
+      <Process />
+      
     </div>
   );
 }

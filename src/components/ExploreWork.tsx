@@ -33,6 +33,13 @@ const ExploreWork = () => {
           categorys={["WorkCard", "WorkCard", "WorkCard"]}
           link="WorkCard"
         />
+        <WorkCard
+          title="WorkCard"
+          description="Techzo is a cutting-edge design agency template built to showcase innovation, digital expertise, and a bold creative presence online"
+          image="/image.png"
+          categorys={["WorkCard", "WorkCard", "WorkCard"]}
+          link="WorkCard"
+        />
       </div>
     </div>
   );
