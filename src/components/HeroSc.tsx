@@ -7,6 +7,7 @@ import Image from "next/image";
 import { SplitText } from "gsap/SplitText";
 import { GSDevTools } from "gsap/GSDevTools";
 import HoverCom from "./HoverCom";
+import Link from "next/link";
 gsap.registerPlugin(SplitText, ScrollTrigger, GSDevTools);
 const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
   useGSAP(() => {
@@ -165,15 +166,37 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
           JavaScript frameworks — combining React on the frontend with robust
           server-side solutions using Node.js.
         </p>
-        <div className="pt-14 flex gap-1">
+        <div className=" flex gap-1">
           <span className="text-[#7AF298]">/</span>
-          <HoverCom>Twitter</HoverCom>
+          <HoverCom>
+            <a className="Link-social" href="https://x.com/mosaeed7888">
+              Twitter
+            </a>
+          </HoverCom>
           <span className="text-[#7AF298]">/</span>
-          <HoverCom>Github</HoverCom>
+          <HoverCom>
+            <a className="Link-social" href="https://github.com/mosaeed7888">
+              Github
+            </a>
+          </HoverCom>
           <span className="text-[#7AF298]">/</span>
-          <HoverCom>LinkedIn</HoverCom>
+          <HoverCom>
+            <a
+              className="Link-social"
+              href="https://www.linkedin.com/in/mosaeed7888"
+            >
+              LinkedIn
+            </a>
+          </HoverCom>
           <span className="text-[#7AF298]">/</span>
-          <HoverCom>Youtube</HoverCom>
+          <HoverCom>
+            <a
+              className="Link-social"
+              href="https://www.youtube.com/@mosaeed7888"
+            >
+              Youtube
+            </a>
+          </HoverCom>
         </div>
       </div>
     </div>

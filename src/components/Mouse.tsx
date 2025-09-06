@@ -2,7 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ArrowRightIcon } from "lucide-react";
-import React, { useEffect } from "react";
+import React from "react";
 
 const Mouse = () => {
   useGSAP(() => {
@@ -10,6 +10,7 @@ const Mouse = () => {
       xPercent: -50,
       yPercent: -50,
     });
+
     const xTo = gsap.quickTo("#mouse-follower-inner", "x", {
         duration: 0.1,
         ease: "power2.out",
@@ -24,10 +25,14 @@ const Mouse = () => {
       yTo(e.clientY);
     });
 
-    // handle hover links
-    const links = document.querySelectorAll("a"); // كل اللينكات
+    const links = document.querySelectorAll("a,.start-project,.Link-social,button");
+
     links.forEach((link) => {
       link.addEventListener("mouseenter", () => {
+        // Kill only scale/color tweens
+        gsap.killTweensOf("#mouse-follower-inner", "scale,backgroundColor");
+        gsap.killTweensOf("#arrow-right-icon", "opacity,rotate");
+
         gsap.to("#arrow-right-icon", {
           opacity: 1,
           rotate: -45,
@@ -37,19 +42,24 @@ const Mouse = () => {
         gsap.to("#mouse-follower-inner", {
           scale: 2.3,
           backgroundColor: "#000",
-          duration: 0.7,
-          ease: "power3.out",
-        });
-      });
-      link.addEventListener("mouseleave", () => {
-        gsap.to("#arrow-right-icon", {
-          opacity: 0,
           duration: 0.3,
           ease: "power3.out",
         });
+      });
+
+      link.addEventListener("mouseleave", () => {
+        gsap.killTweensOf("#mouse-follower-inner", "scale,backgroundColor");
+        gsap.killTweensOf("#arrow-right-icon", "opacity,rotate");
+
         gsap.to("#mouse-follower-inner", {
           scale: 1,
           backgroundColor: "#7AF298",
+          duration: 0.3,
+          ease: "power3.out",
+        });
+        gsap.to("#arrow-right-icon", {
+          opacity: 0,
+          rotate: 0,
           duration: 0.3,
           ease: "power3.out",
         });
@@ -68,7 +78,7 @@ const Mouse = () => {
       >
         <ArrowRightIcon
           id="arrow-right-icon"
-          className=" w-4 h-4 text-[#7AF298] opacity-0"
+          className="w-4 h-4 text-[#7AF298] opacity-0"
         />
       </div>
     </div>

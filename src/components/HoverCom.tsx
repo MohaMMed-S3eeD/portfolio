@@ -111,7 +111,7 @@ const HoverCom = ({ children }: { children: React.ReactNode }) => {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <div ref={trackRef} className="will-change-transform cursor-pointer">
+      <div ref={trackRef} className="will-change-transform ">
         <div className="hover-line">{children}</div>
         <div className="hover-line">{children}</div>
       </div>
