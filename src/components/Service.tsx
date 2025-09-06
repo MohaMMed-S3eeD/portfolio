@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/accordion";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
-import { gsap } from "gsap";
 const Service = () => {
   return (
     <div className="max-w-[1200px] px-4 md:px-8 mx-auto h-screen flex flex-col justify-center mb-10">
@@ -69,30 +68,6 @@ const ServiceItem = ({
   buttonText: string;
   index: string;
 }) => {
-  const handleEnter = () => {
-    gsap.to(".BTN span", {
-      rotate: 45,
-      duration: 1,
-      ease: "power2.out",
-    });
-    gsap.to(".BTN hr", {
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out",
-    });
-  };
-  const handleLeave = () => {
-    gsap.to(".BTN span", {
-      rotate: -5,
-      duration: 1,
-      ease: "power2.out",
-    });
-    gsap.to(".BTN hr", {
-      opacity: 0.6,
-      duration: 1,
-      ease: "power2.out",
-    });
-  };
   return (
     <AccordionItem className="flex-1" value={index}>
       <AccordionTrigger className="text-2xl font-bold">
@@ -100,18 +75,14 @@ const ServiceItem = ({
       </AccordionTrigger>
       <AccordionContent>
         <p className="text-md">{description}</p>
-        <button
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleLeave}
-          className=" BTN flex flex-col items-center gap-2 text-[#7AF298]  pb-1 my-2"
-        >
+        <button className=" BTN group flex flex-col items-center gap-2 text-[#7AF298]  pb-1 my-2">
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-light"> {buttonText}</h1>
-            <span>
+            <span className="transition-transform duration-300 ease-out group-hover:rotate-45">
               <MoveUpRight />
             </span>
           </div>
-          <hr className="w-full  border-[#7AF298] opacity-60" />
+          <hr className="w-full  border-[#7AF298] opacity-60 transition-opacity duration-300 ease-out group-hover:opacity-100" />
         </button>
       </AccordionContent>
     </AccordionItem>

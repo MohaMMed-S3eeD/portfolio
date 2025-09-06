@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    // يقلل حجم الحِزم عبر تقسيم الاستيرادات إلى وحدات أصغر
+    optimizePackageImports: ["gsap", "@gsap/react", "lucide-react"],
+  },
+  swcMinify: true,
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig;

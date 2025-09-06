@@ -27,7 +27,6 @@ export default function Home() {
       <ExploreWork />
       <Services />
       <Process />
-      
     </div>
   );
 }
