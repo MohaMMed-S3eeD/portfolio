@@ -1,11 +1,59 @@
+"use client";
 import React from "react";
 import HeadSection from "./HeadSection";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Process = () => {
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Title animate
+    gsap.from("#process-section .section-title", {
+      opacity: 0,
+      yPercent: -30,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#process-section .section-title",
+        start: "top 70%",
+      },
+    });
+    
+    // Description box animate
+    gsap.from("#process-section #description-box2", {
+      opacity: 0,
+      xPercent: -40,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#process-section #description-box2",
+        start: "top 70%",
+      },
+    });
+    
+    // Process items animate
+    const processItems = gsap.utils.toArray<HTMLElement>(
+      "#process-section .process-item"
+    );
+    processItems.forEach((item, index) => {
+      gsap.from(item, {
+        opacity: 0,
+        y: 60,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 80%",
+        },
+        delay: index * 0.2,
+      });
+    });
+  }, []);
+
   return (
-    <div className="max-w-[1200px] px-4 md:px-8 mx-auto md:h-[60vh] flex flex-col justify-center mb-10 ">
+    <div id="process-section" className="max-w-[1200px] px-4 md:px-8 mx-auto md:h-[60vh] flex flex-col justify-center mb-10 ">
       <HeadSection title="Process" description="My Development work Process" />
       <div className="flex flex-col md:flex-row gap-5 justify-between ">
         <ProcessItem
@@ -44,23 +92,53 @@ const ProcessItem = ({
   hr?: boolean;
 }) => {
   useGSAP(() => {
-    gsap.from(".num", {
-      x: "-15%",
+    gsap.from(`.num-${number}`, {
+      opacity: 0,
+      x: -30,
       duration: 1,
       ease: "power2.out",
+      scrollTrigger: {
+        trigger: `.process-item-${number}`,
+        start: "top 80%",
+      },
+    });
+    
+    gsap.from(`.title-${number}`, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: `.process-item-${number}`,
+        start: "top 80%",
+      },
+      delay: 0.2,
+    });
+    
+    gsap.from(`.description-${number}`, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: `.process-item-${number}`,
+        start: "top 80%",
+      },
+      delay: 0.4,
     });
   }, []);
+
   return (
     <div
-      className={` flex-1 flex flex-col  items-center md:items-start justify-center md:justify-start ${
+      className={`process-item process-item-${number} flex-1 flex flex-col items-center md:items-start justify-center md:justify-start ${
         hr ? "border-r" : ""
       } overflow-hidden`}
     >
-      <span className="num text-[150px] font-bold text-[#7AF298]  ">
+      <span className={`num num-${number} text-[150px] font-bold text-[#7AF298]`}>
         0{number}
       </span>
-      <h1 className="text-2xl font-bold mb-3">{title}</h1>
-      <p className="text-md opacity-70">{description}</p>
+      <h1 className={`title-${number} text-2xl font-bold mb-3`}>{title}</h1>
+      <p className={`description-${number} text-md opacity-70`}>{description}</p>
     </div>
   );
 };

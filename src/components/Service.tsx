@@ -1,4 +1,8 @@
+"use client";
 import React from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeadSection from "./HeadSection";
 import {
   Accordion,
@@ -8,13 +12,84 @@ import {
 } from "@/components/ui/accordion";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
+
 const Service = () => {
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Title animate
+    gsap.from("#services-section .section-title", {
+      opacity: 0,
+      yPercent: -30,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#services-section .section-title",
+        start: "top 70%",
+      },
+    });
+    
+    // Description box animate
+    gsap.from("#services-section #description-box2", {
+      opacity: 0,
+      xPercent: -40,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#services-section #description-box2",
+        start: "top 70%",
+      },
+    });
+    
+    // Service image animate
+    gsap.from("#services-section .service-image", {
+      opacity: 0,
+      x: -60,
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#services-section .service-image",
+        start: "top 70%",
+      },
+    });
+    
+    // Accordion animate
+    gsap.from("#services-section .accordion-container", {
+      opacity: 0,
+      x: 60,
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#services-section .accordion-container",
+        start: "top 70%",
+      },
+    });
+    
+    // Service items animate
+    const serviceItems = gsap.utils.toArray<HTMLElement>(
+      "#services-section .service-item"
+    );
+    serviceItems.forEach((item, index) => {
+      gsap.from(item, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 80%",
+        },
+        delay: index * 0.1,
+      });
+    });
+  }, []);
+
   return (
-    <div className="max-w-[1200px] px-4 md:px-8 mx-auto h-screen flex flex-col justify-center mb-10">
+    <div id="services-section" className="max-w-[1200px] px-4 md:px-8 mx-auto h-screen flex flex-col justify-center mb-10">
       <HeadSection title="Services" description=" Web Development Services " />
       <div className="flex flex-col xl:flex-row items-center gap-10">
         <Image
-          className="flex-1 w-full h-full"
+          className="service-image flex-1 w-full h-full"
           src="/image.png"
           alt="service"
           width={100}
@@ -22,7 +97,7 @@ const Service = () => {
         />
         <Accordion
           defaultValue="item-1"
-          className="flex flex-col flex-1 w-full h-full"
+          className="accordion-container flex flex-col flex-1 w-full h-full"
           type="single"
         >
           <ServiceItem
@@ -69,7 +144,7 @@ const ServiceItem = ({
   index: string;
 }) => {
   return (
-    <AccordionItem className="flex-1" value={index}>
+    <AccordionItem className="service-item flex-1" value={index}>
       <AccordionTrigger className="text-2xl font-bold">
         {title}
       </AccordionTrigger>
