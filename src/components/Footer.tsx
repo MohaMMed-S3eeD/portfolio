@@ -63,18 +63,6 @@ const Footer = () => {
         delay: index * 0.1,
       });
     });
-
-    // Footer bottom info animate
-    gsap.from("#footer-section .footer-bottom", {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#footer-section .footer-bottom",
-        start: "top 90%",
-      },
-    });
   }, []);
 
   return (
@@ -106,7 +94,7 @@ const Footer = () => {
           links={["Linkedin", "Instagram", "Twitter (X)"]}
         />
       </div>
-      <div className="footer-bottom flex flex-col md:flex-row justify-between w-full absolute bottom-0 left-0 p-5 ">
+      <div className="flex flex-col md:flex-row justify-between w-full absolute bottom-0 left-0 p-5 ">
         <h3>mosaeed7888@gmail.com</h3>
         <h3>© 2025 Mohamed Saeed. All rights reserved.</h3>
       </div>
@@ -117,7 +105,6 @@ const Footer = () => {
 export default Footer;
 
 const CardFooter = ({ title, links }: { title: string; links: string[] }) => {
-
   return (
     <div className="footer-card flex flex-col gap-5 text-xl">
       <h1 className="footer-card-title font-bold text-[#7AF298]">{title}</h1>
