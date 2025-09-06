@@ -8,18 +8,14 @@ import {
 } from "@/components/ui/accordion";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 const Service = () => {
   return (
-    <div className="max-w-[1200px] px-8 mx-auto h-screen flex flex-col justify-center mb-10">
-      <HeadSection
-        title="Services"
-        description="End-to-End Web Development Services "
-      />
-      <div className="flex items-center gap-10">
+    <div className="max-w-[1200px] px-4 md:px-8 mx-auto h-screen flex flex-col justify-center mb-10">
+      <HeadSection title="Services" description=" Web Development Services " />
+      <div className="flex flex-col xl:flex-row items-center gap-10">
         <Image
-          className="flex-1"
+          className="flex-1 w-full h-full"
           src="/image.png"
           alt="service"
           width={100}

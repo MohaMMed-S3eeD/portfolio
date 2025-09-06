@@ -5,9 +5,9 @@ import { gsap } from "gsap";
 
 const Process = () => {
   return (
-    <div className="max-w-[1200px] px-8 mx-auto h-[60vh] flex flex-col justify-center mb-10 ">
+    <div className="max-w-[1200px] px-4 md:px-8 mx-auto md:h-[60vh] flex flex-col justify-center mb-10 ">
       <HeadSection title="Process" description="My Development work Process" />
-      <div className="flex gap-5 justify-between ">
+      <div className="flex flex-col md:flex-row gap-5 justify-between ">
         <ProcessItem
           title="Plan & Architect"
           description="Before writing a single line of code, I dive deep into understanding the project goals, user needs, and technical constraints."
@@ -52,7 +52,7 @@ const ProcessItem = ({
   }, []);
   return (
     <div
-      className={` flex-1 flex flex-col  ${
+      className={` flex-1 flex flex-col  items-center md:items-start justify-center md:justify-start ${
         hr ? "border-r" : ""
       } overflow-hidden`}
     >

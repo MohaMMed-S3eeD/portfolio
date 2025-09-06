@@ -5,10 +5,10 @@ import HeadSection from "./HeadSection";
 
 const ExploreWork = () => {
   return (
-    <div className="max-w-[1200px] px-8 mx-auto  flex flex-col justify-center mb-10">
+    <div className="max-w-[1200px] px-4 md:px-8 mx-auto  flex flex-col justify-center my-10">
       <HeadSection
         title="Explore Work"
-        description="A Showcase of My Latest Projects"
+        description=" My Latest Projects"
       />
 
       <div className="grid grid-cols-2 gap-16">
@@ -61,7 +61,7 @@ const WorkCard = ({
   link: string;
 }) => {
   return (
-    <Link href={link} className="flex flex-col gap-2 my-3">
+    <Link href={link} className="flex flex-col gap-2 my-3 overflow-hidden">
       <Image
         className="w-full h-full max-h-[400px] object-cover"
         width={100}
@@ -71,10 +71,10 @@ const WorkCard = ({
       />
       <h1 className="text-2xl my-3 font-bold">{title}</h1>
       <p className="text-sm opacity-70">{description}</p>
-      <ul className="flex gap-2 my-3">
+      <ul className="flex flex-wrap  gap-2 my-3 ">
         {categorys.map((category, index) => (
           <li
-            className="text-[#7AF298] text-xs  font-medium bg-[#3b3b3b] rounded-full px-3 py-1.5"
+            className="text-[#7AF298] text-xs font-medium bg-[#3b3b3b] rounded-full px-3 py-1.5"
             key={index}
           >
             {category}
