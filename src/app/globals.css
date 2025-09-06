@@ -5,6 +5,13 @@
 body {
   background-color: #000;
   color: #ffffff;
+  cursor: none;
+  user-select: none;
+}
+
+a,
+button {
+  cursor: none !important;
 }
 
 @theme inline {
