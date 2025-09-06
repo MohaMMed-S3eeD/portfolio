@@ -27,7 +27,7 @@ const Nav = () => {
   return (
     <div
       id="nav-box"
-      className="fixed top-0 left-0 right-0   flex justify-between p-2 py-5 font-bold text-xl z-50 "
+      className="fixed top-0 left-0 right-0 backdrop-blur-xl md:backdrop-blur-none  flex justify-between p-2 py-5 font-bold text-xl z-50 "
     >
       <div>MOHAMED SAEED </div>
       <Menu />
@@ -58,7 +58,7 @@ const Menu = () => {
   }, [isOpen]);
   return (
     <div
-      className={` w-fit font-light md:font-medium bg-white rounded-xl overflow-hidden ${
+      className={` w-fit font-light md:font-medium  bg-white rounded-xl overflow-hidden ${
         isOpen ? "" : "hover:bg-[#7DDFB4]"
       }`}
       ref={MenuRef}
