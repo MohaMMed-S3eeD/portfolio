@@ -8,13 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Process = () => {
   useGSAP(() => {
-
     // Title animate
     gsap.fromTo(
       "#process-section .section-title",
       {
         opacity: 0,
-        yPercent: -30,
       },
       {
         opacity: 1,
@@ -33,7 +31,6 @@ const Process = () => {
       "#process-section #description-box2",
       {
         opacity: 0,
-        yPercent: -30,
       },
       {
         opacity: 1,
@@ -56,11 +53,9 @@ const Process = () => {
         item,
         {
           opacity: 0,
-          yPercent: 60,
         },
         {
           opacity: 1,
-          yPercent: 0,
           duration: 1.2,
           ease: "power2.out",
           scrollTrigger: {
@@ -139,11 +134,9 @@ const ProcessItem = ({
       `.title-${number}`,
       {
         opacity: 0,
-        yPercent: 20,
       },
       {
         opacity: 1,
-        yPercent: 0,
         duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {
@@ -158,11 +151,9 @@ const ProcessItem = ({
       `.description-${number}`,
       {
         opacity: 0,
-        yPercent: 20,
       },
       {
         opacity: 1,
-        yPercent: 0,
         duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {

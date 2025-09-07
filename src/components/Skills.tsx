@@ -10,7 +10,6 @@ const Skills = () => {
     // Title animate
     gsap.from("#skills-section .section-title", {
       opacity: 0,
-      yPercent: -30,
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {
@@ -21,7 +20,6 @@ const Skills = () => {
     // Description box animate
     gsap.from("#skills-section #description-box2", {
       opacity: 0,
-      xPercent: -40,
       duration: 1.5,
       ease: "power2.out",
       scrollTrigger: {
@@ -36,7 +34,6 @@ const Skills = () => {
     cards.forEach((card) => {
       gsap.from(card, {
         opacity: 0,
-        x: 40,
         duration: 1.5,
         ease: "power2.out",
         scrollTrigger: {
@@ -49,7 +46,6 @@ const Skills = () => {
       if (chips.length) {
         gsap.from(chips, {
           opacity: 0,
-          y: 20,
           stagger: 0.06,
           duration: 0.5,
           ease: "power2.out",
@@ -81,7 +77,6 @@ const Skills = () => {
     });
     // Hr animate
     gsap.from("#hr", {
-      xPercent: -100,
       duration: 2,
       ease: "power2.out",
       scrollTrigger: {
@@ -93,7 +88,7 @@ const Skills = () => {
   return (
     <div
       id="skills-section"
-      className="max-w-[1200px] px-8 mx-auto flex flex-col justify-center "
+      className="max-w-[1200px] px-8 mx-auto flex flex-col justify-center h-screen"
     >
       <h1 className=" font-bold my-3 text-[#7AF298] section-title">
         {"// Skills"}
