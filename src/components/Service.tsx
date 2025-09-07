@@ -16,7 +16,7 @@ import Image from "next/image";
 const Service = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     // Title animate
     gsap.from("#services-section .section-title", {
       opacity: 0,
@@ -28,7 +28,7 @@ const Service = () => {
         start: "top 70%",
       },
     });
-    
+
     // Description box animate
     gsap.from("#services-section #description-box2", {
       opacity: 0,
@@ -40,7 +40,7 @@ const Service = () => {
         start: "top 70%",
       },
     });
-    
+
     // Service image animate
     gsap.from("#services-section .service-image", {
       opacity: 0,
@@ -52,7 +52,7 @@ const Service = () => {
         start: "top 70%",
       },
     });
-    
+
     // Accordion animate
     gsap.from("#services-section .accordion-container", {
       opacity: 0,
@@ -64,7 +64,7 @@ const Service = () => {
         start: "top 70%",
       },
     });
-    
+
     // Service items animate
     const serviceItems = gsap.utils.toArray<HTMLElement>(
       "#services-section .service-item"
@@ -85,15 +85,19 @@ const Service = () => {
   }, []);
 
   return (
-    <div id="services-section" className="max-w-[1200px] px-4 md:px-8 mx-auto h-screen flex flex-col justify-center mb-10 overflow-hidden">
+    <div
+      id="services-section"
+      className="max-w-[1200px] px-4 md:px-8 mx-auto h-screen flex flex-col justify-center mb-10 overflow-hidden"
+    >
       <HeadSection title="Services" description=" Web Development Services " />
       <div className="flex flex-col xl:flex-row items-center gap-10">
         <Image
-          className="service-image flex-1 w-full h-full"
-          src="/image.png"
+          className="service-image max-w-[50%] flex-1 "
+          src="/img.jpeg"
           alt="service"
-          width={100}
-          height={100}
+          width={1000}
+          height={1000}
+          loading="lazy"
         />
         <Accordion
           defaultValue="item-1"
@@ -150,10 +154,10 @@ const ServiceItem = ({
       </AccordionTrigger>
       <AccordionContent>
         <p className="text-md">{description}</p>
-        <button className=" BTN group flex flex-col items-center gap-2 text-[#7AF298]  pb-1 my-2">
+        <button className=" BTN group flex flex-col items-center gap-2 text-[#7AF298]  pb-1 my-2 ">
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-light"> {buttonText}</h1>
-            <span className="transition-transform duration-300 ease-out group-hover:rotate-45">
+            <span className=" transition-transform duration-300 ease-out group-hover:rotate-45">
               <MoveUpRight />
             </span>
           </div>
