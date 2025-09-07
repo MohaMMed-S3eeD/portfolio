@@ -7,7 +7,6 @@ import Image from "next/image";
 import { SplitText } from "gsap/SplitText";
 import { GSDevTools } from "gsap/GSDevTools";
 import HoverCom from "./HoverCom";
-import Link from "next/link";
 gsap.registerPlugin(SplitText, ScrollTrigger, GSDevTools);
 const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
   useGSAP(() => {
@@ -146,11 +145,12 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
         className="absolute bottom-[10%] left-[50%] transform -translate-x-1/2  drop-shadow-2xl rounded-full overflow-hidden"
       >
         <Image
-          src="/img2.png"
+          src="https://res.cloudinary.com/dtvr83fb3/image/upload/v1757216445/img2_wlqg7w.png"
           alt="hero"
           width={300}
           height={300}
           className="rounded-full"
+          loading="lazy"
         />
       </div>
       <div id="contact-box" className="absolute bottom-0 left-0 p-5">

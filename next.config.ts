@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   },
   swcMinify: true,
   productionBrowserSourceMaps: false,
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
 };
 
 export default nextConfig;
