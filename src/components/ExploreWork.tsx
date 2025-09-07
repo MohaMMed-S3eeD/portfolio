@@ -140,7 +140,7 @@ const ExploreWork = () => {
     >
       <HeadSection title="Explore Work" description=" My Latest Projects" />
 
-      <div className="grid grid-cols-2 gap-16">
+      <div className="grid grid-cols-2 md:gap-16 gap-4">
         {data.map((item, index) => (
           <WorkCard
             key={index}
@@ -174,17 +174,19 @@ const WorkCard = ({
   return (
     <Link
       href={link}
-      className="work-card flex flex-col gap-2 my-3 overflow-hidden"
+      className="work-card flex flex-col gap-2 my-3 overflow-hidden w-full h-full   "
     >
       <Image
-        className="work-card-image w-full h-full max-h-[400px] object-cover"
+        className="work-card-image w-full object-cover"
         width={1000}
         height={1000}
         src={image}
         alt={title}
       />
-      <h1 className="text-2xl my-3 font-bold">{title}</h1>
-      <p className="text-sm opacity-70 line-clamp-4 md:line-clamp-none">{description}</p>
+      <h1 className="text-2xl my-3 font-bold line-clamp-1">{title}</h1>
+      <p className="text-sm opacity-70 line-clamp-3 md:line-clamp-none">
+        {description}
+      </p>
       <ul className="flex flex-wrap  gap-2 my-3 ">
         {categorys.map((category, index) => (
           <li

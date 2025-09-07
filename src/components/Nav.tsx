@@ -8,6 +8,8 @@ import HoverCom from "./HoverCom";
 
 gsap.registerPlugin(useGSAP, GSDevTools);
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   useGSAP(() => {
     gsap.fromTo(
       "#nav-box",
@@ -27,18 +29,25 @@ const Nav = () => {
   return (
     <div
       id="nav-box"
-      className="fixed top-0 left-0 right-0 backdrop-blur-xl md:backdrop-blur-none  flex justify-between p-2 py-5 font-bold text-xl z-50 "
+      className={` fixed top-0 left-0 right-0 backdrop-blur-xl md:backdrop-blur-none  flex justify-between items-center p-2 py-3 md:py-5 font-bold text-xl z-50  ${
+        isOpen ? "items-start" : "items-center"
+      }`}
     >
       <div>MOHAMED SAEED </div>
-      <Menu />
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };
 
 export default Nav;
 
-const Menu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Menu = ({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}) => {
   const MenuRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
