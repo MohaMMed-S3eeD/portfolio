@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Mouse from "@/components/Mouse";
+import ScrollTriggerRefresher from "@/components/ScrollTriggerRefresher";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <ScrollTriggerRefresher />
       </body>
     </html>
   );

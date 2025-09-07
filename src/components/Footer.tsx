@@ -1,71 +1,11 @@
 "use client";
 import React from "react";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Magnet from "./Magnet";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  useGSAP(() => {
-    // Main title animate
-    gsap.fromTo(
-      "#footer-section .footer-title",
-      {
-        opacity: 0,
-        yPercent: -30,
-      },
-      {
-        opacity: 1,
-        yPercent: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#footer-section .footer-title",
-          start: "top 70%",
-        },
-      }
-    );
-
-    // Start project button animate
-    gsap.fromTo(
-      "#footer-section .start-project",
-      {
-        opacity: 0,
-        scale: 0.8,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#footer-section .start-project",
-          start: "top 70%",
-        },
-      }
-    );
-
-    // Divider animate
-    gsap.fromTo(
-      "#footer-section .footer-divider",
-      {
-        opacity: 0,
-        scaleX: 0,
-      },
-      {
-        opacity: 1,
-        scaleX: 1,
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#footer-section .footer-divider",
-          start: "top 80%",
-        },
-      }
-    );
-  }, []);
-
   return (
     <div
       id="footer-section"
