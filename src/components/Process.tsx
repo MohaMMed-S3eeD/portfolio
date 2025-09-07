@@ -4,56 +4,80 @@ import HeadSection from "./HeadSection";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Process = () => {
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
+
     // Title animate
-    gsap.from("#process-section .section-title", {
-      opacity: 0,
-      yPercent: -30,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#process-section .section-title",
-        start: "top 70%",
+    gsap.fromTo(
+      "#process-section .section-title",
+      {
+        opacity: 0,
+        yPercent: -30,
       },
-    });
-    
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#process-section .section-title",
+          start: "top 95%",
+          end: "top 90%",
+        },
+      }
+    );
+
     // Description box animate
-    gsap.from("#process-section #description-box2", {
-      opacity: 0,
-      xPercent: -40,
-      duration: 1.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#process-section #description-box2",
-        start: "top 70%",
+    gsap.fromTo(
+      "#process-section #description-box2",
+      {
+        opacity: 0,
+        yPercent: -30,
       },
-    });
-    
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#process-section #description-box2",
+          start: "top 95%",
+          end: "top 90%",
+        },
+      }
+    );
+
     // Process items animate
     const processItems = gsap.utils.toArray<HTMLElement>(
       "#process-section .process-item"
     );
-    processItems.forEach((item, index) => {
-      gsap.from(item, {
-        opacity: 0,
-        y: 60,
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 80%",
+    processItems.forEach((item) => {
+      gsap.fromTo(
+        item,
+        {
+          opacity: 0,
+          yPercent: 60,
         },
-        delay: index * 0.2,
-      });
+        {
+          opacity: 1,
+          yPercent: 0,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 95%",
+            end: "top 90%",
+          },
+        }
+      );
     });
   }, []);
 
   return (
-    <div id="process-section" className="max-w-[1200px] px-4 md:px-8 mx-auto md:h-[60vh] flex flex-col justify-center mb-10 ">
+    <div
+      id="process-section"
+      className="max-w-[1200px] px-4 md:px-8 mx-auto my-10 flex flex-col justify-center mb-10 "
+    >
       <HeadSection title="Process" description="My Development work Process" />
       <div className="flex flex-col md:flex-row gap-5 justify-between ">
         <ProcessItem
@@ -92,40 +116,62 @@ const ProcessItem = ({
   hr?: boolean;
 }) => {
   useGSAP(() => {
-    gsap.from(`.num-${number}`, {
-      opacity: 0,
-      x: -30,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: `.process-item-${number}`,
-        start: "top 80%",
+    gsap.fromTo(
+      `.num-${number}`,
+      {
+        opacity: 0,
+        xPercent: -30,
       },
-    });
-    
-    gsap.from(`.title-${number}`, {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: `.process-item-${number}`,
-        start: "top 80%",
+      {
+        opacity: 1,
+        xPercent: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: `.process-item-${number}`,
+          start: "top 95%",
+          end: "top 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      `.title-${number}`,
+      {
+        opacity: 0,
+        yPercent: 20,
       },
-      delay: 0.2,
-    });
-    
-    gsap.from(`.description-${number}`, {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: `.process-item-${number}`,
-        start: "top 80%",
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: `.process-item-${number}`,
+          start: "top 95%",
+          end: "top 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      `.description-${number}`,
+      {
+        opacity: 0,
+        yPercent: 20,
       },
-      delay: 0.4,
-    });
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: `.process-item-${number}`,
+          start: "top 95%",
+          end: "top 90%",
+        },
+      }
+    );
   }, []);
 
   return (
@@ -134,11 +180,15 @@ const ProcessItem = ({
         hr ? "border-r" : ""
       } overflow-hidden`}
     >
-      <span className={`num num-${number} text-[150px] font-bold text-[#7AF298]`}>
+      <span
+        className={`num num-${number} text-[150px] font-bold text-[#7AF298]`}
+      >
         0{number}
       </span>
       <h1 className={`title-${number} text-2xl font-bold mb-3`}>{title}</h1>
-      <p className={`description-${number} text-md opacity-70`}>{description}</p>
+      <p className={`description-${number} text-md opacity-70`}>
+        {description}
+      </p>
     </div>
   );
 };

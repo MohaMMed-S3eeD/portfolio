@@ -3,10 +3,10 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverCom from "./HoverCom";
+gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
     // Title animate
     gsap.from("#skills-section .section-title", {
       opacity: 0,
@@ -93,7 +93,7 @@ const Skills = () => {
   return (
     <div
       id="skills-section"
-      className="max-w-[1200px] px-8 mx-auto h-screen flex flex-col justify-center "
+      className="max-w-[1200px] px-8 mx-auto flex flex-col justify-center "
     >
       <h1 className=" font-bold my-3 text-[#7AF298] section-title">
         {"// Skills"}
@@ -125,7 +125,12 @@ const Skills = () => {
           <div>
             <button
               type="button"
-              onClick={() => window.open("https://drive.google.com/file/d/12YOa6v7My5k94eBSBvIh1K1dgVz-1-62/view?usp=sharing", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/12YOa6v7My5k94eBSBvIh1K1dgVz-1-62/view?usp=sharing",
+                  "_blank"
+                )
+              }
               rel="noopener"
               className="bg-[#7AF298] text-black px-4 py-2 rounded-full mt-10"
             >

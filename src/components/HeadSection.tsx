@@ -49,7 +49,7 @@ const HeadSection = ({
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: `.head-section-${title.replace(/\s+/g, '-').toLowerCase()} .arrow-div`,
-          start: "top 70%",
+          start: "top 95%",
         },
       }
     );

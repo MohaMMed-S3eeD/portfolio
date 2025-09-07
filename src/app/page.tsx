@@ -25,8 +25,8 @@ export default function Home() {
       <HeroSc Tl={Tl} />
       <Skills />
       <ExploreWork />
-      <Services />
       <Process />
+      <Services />
     </div>
   );
 }

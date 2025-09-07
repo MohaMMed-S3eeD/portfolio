@@ -12,74 +12,25 @@ import {
 } from "@/components/ui/accordion";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
+gsap.registerPlugin(ScrollTrigger);
 
 const Service = () => {
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Title animate
-    gsap.from("#services-section .section-title", {
-      opacity: 0,
-      yPercent: -30,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#services-section .section-title",
-        start: "top 70%",
-      },
-    });
-
-    // Description box animate
-    gsap.from("#services-section #description-box2", {
-      opacity: 0,
-      xPercent: -40,
-      duration: 1.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#services-section #description-box2",
-        start: "top 70%",
-      },
-    });
-
-    // Service image animate
-    gsap.from("#services-section .service-image", {
-      opacity: 0,
-      x: -60,
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#services-section .service-image",
-        start: "top 70%",
-      },
-    });
-
-    // Accordion animate
-    gsap.from("#services-section .accordion-container", {
-      opacity: 0,
-      x: 60,
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#services-section .accordion-container",
-        start: "top 70%",
-      },
-    });
-
     // Service items animate
     const serviceItems = gsap.utils.toArray<HTMLElement>(
       "#services-section .service-item"
     );
-    serviceItems.forEach((item, index) => {
+    serviceItems.forEach((item) => {
       gsap.from(item, {
         opacity: 0,
-        y: 30,
+        yPercent: 30,
         duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {
           trigger: item,
-          start: "top 80%",
+          start: "top 90%",
+          end: "top 60%",
         },
-        delay: index * 0.1,
       });
     });
   }, []);
@@ -87,7 +38,7 @@ const Service = () => {
   return (
     <div
       id="services-section"
-      className="max-w-[1200px] px-4 md:px-8 mx-auto h-screen flex flex-col justify-center mb-10 overflow-hidden"
+      className="max-w-[1200px] px-4 md:px-8 mx-auto  flex flex-col justify-center mb-10 h-screen"
     >
       <HeadSection title="Services" description=" Web Development Services " />
       <div className="flex flex-col xl:flex-row items-center gap-10">
