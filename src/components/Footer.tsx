@@ -87,7 +87,7 @@ const Footer = () => {
             height="400%"
             filterUnits="objectBoundingBox"
             primitiveUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"  
+            colorInterpolationFilters="sRGB"
           >
             <feGaussianBlur
               stdDeviation="130"
@@ -121,9 +121,14 @@ const Footer = () => {
       <h1 className="footer-title flex flex-col justify-center items-center text-[20px] sm:text-[30px] md:text-[50px] lg:text-[70px] text-center font-bold max-w-full sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%] md:flex-1 px-4">
         Ready to take your idea to the next level?
         <Magnet padding={100} disabled={false} magnetStrength={15}>
-          <p className="start-project text-black bg-[#7AF298] rounded-full w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[130px] md:h-[130px] flex items-center justify-center text-sm sm:text-lg md:text-xl font-semibold m-6 sm:m-8 md:m-10">
+          <a
+            target="_blank"
+            href="https://wa.link/7q4teq"
+            rel="noopener"
+            className="start-project text-black bg-[#7AF298] rounded-full w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[130px] md:h-[130px] flex items-center justify-center text-sm sm:text-lg md:text-xl font-semibold m-6 sm:m-8 md:m-10"
+          >
             Start Project
-          </p>
+          </a>
         </Magnet>
       </h1>
       <div className="footer-divider flex gap-2 items-center mb-3 w-full ">
@@ -134,12 +139,39 @@ const Footer = () => {
       <div className="w-full flex justify-between md:flex-1">
         <CardFooter
           title="Quick links"
-          links={["Home", "About", "Contact", "Blog"]}
+          links={[
+            { title: "Home", link: "/" },
+            { title: "About", link: "/about" },
+            { title: "Contact", link: "/contact" },
+            { title: "Blog", link: "/blog" },
+          ]}
         />
-        <CardFooter title="Protfolio" links={["Github", "Codepen"]} />
+        <CardFooter
+          title="Protfolio"
+          links={[
+            { title: "Github", link: "https://github.com/MohaMMed-S3eeD" },
+            {
+              title: "Linkedin",
+              link: "https://www.linkedin.com/in/mohamed-saeed-3b3118263",
+            },
+          ]}
+        />
         <CardFooter
           title="Socials Links"
-          links={["Linkedin", "Instagram", "Twitter (X)"]}
+          links={[
+            {
+              title: "Linkedin",
+              link: "https://www.linkedin.com/in/mohamed-saeed-3b3118263",
+            },
+            {
+              title: "Whatsapp",
+              link: "https://wa.link/7q4teq",
+            },
+            {
+              title: "Codepen",
+              link: "https://codepen.io/geuwjkvb-the-sans/",
+            },
+          ]}
         />
       </div>
       <div className="flex flex-col md:flex-row justify-between w-full absolute bottom-0 left-0 p-5 ">
@@ -152,14 +184,26 @@ const Footer = () => {
 
 export default Footer;
 
-const CardFooter = ({ title, links }: { title: string; links: string[] }) => {
+const CardFooter = ({
+  title,
+  links,
+}: {
+  title: string;
+  links: { title: string; link: string }[];
+}) => {
   return (
     <div className="footer-card flex flex-col gap-5 text-xl">
       <h1 className="footer-card-title font-bold text-[#7AF298]">{title}</h1>
-      {links.map((link) => (
-        <h3 key={link} className="footer-card-link">
-          {link}
-        </h3>
+      {links.map((link: { title: string; link: string }) => (
+        <a
+          key={link.title}
+          className="footer-card-link"
+          target="_blank"
+          href={link.link}
+          rel="noopener"
+        >
+          {link.title}
+        </a>
       ))}
     </div>
   );

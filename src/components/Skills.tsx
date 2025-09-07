@@ -123,7 +123,12 @@ const Skills = () => {
             </p>
           </div>
           <div>
-            <button className="bg-[#7AF298] text-black px-4 py-2 rounded-full mt-10">
+            <button
+              type="button"
+              onClick={() => window.open("https://drive.google.com/file/d/12YOa6v7My5k94eBSBvIh1K1dgVz-1-62/view?usp=sharing", "_blank")}
+              rel="noopener"
+              className="bg-[#7AF298] text-black px-4 py-2 rounded-full mt-10"
+            >
               <HoverCom>My Resume</HoverCom>
             </button>
           </div>

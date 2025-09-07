@@ -154,12 +154,12 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
         />
       </div>
       <div id="contact-box" className="absolute bottom-0 left-0 p-5">
-        <h1>E info@brunosimon.com </h1>
-        <h1>T +39 03 463 853 02</h1>
+        <h1>E mosaeed7888@gmail.com </h1>
+        <h1>T +20 111 483 8609</h1>
       </div>
       <div
         id="des-box"
-        className="hidden md:block absolute bottom-0 right-0 max-w-[340px] p-5"
+        className="hidden md:block absolute bottom-0 right-0 max-w-[400px]  p-5"
       >
         <p id="description-box">
           I craft fast, scalable, and user-friendly web applications with modern
@@ -169,13 +169,23 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
         <div className=" flex gap-1">
           <span className="text-[#7AF298]">/</span>
           <HoverCom>
-            <a className="Link-social" href="https://x.com/mosaeed7888">
-              Twitter
+            <a
+              className="Link-social"
+              target="_blank"
+              href="https://wa.link/7q4teq"
+              rel="noopener"
+            >
+              WhatsApp
             </a>
           </HoverCom>
           <span className="text-[#7AF298]">/</span>
           <HoverCom>
-            <a className="Link-social" href="https://github.com/mosaeed7888">
+            <a
+              className="Link-social"
+              target="_blank"
+              href="https://github.com/MohaMMed-S3eeD"
+              rel="noopener"
+            >
               Github
             </a>
           </HoverCom>
@@ -183,7 +193,9 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
           <HoverCom>
             <a
               className="Link-social"
-              href="https://www.linkedin.com/in/mosaeed7888"
+              target="_blank"
+              href="https://www.linkedin.com/in/mohamed-saeed-3b3118263"
+              rel="noopener"
             >
               LinkedIn
             </a>
@@ -192,9 +204,11 @@ const HeroSc = ({ Tl }: { Tl: GSAPTimeline }) => {
           <HoverCom>
             <a
               className="Link-social"
-              href="https://www.youtube.com/@mosaeed7888"
+              target="_blank"
+              href="https://codepen.io/geuwjkvb-the-sans/"
+              rel="noopener"
             >
-              Youtube
+              Codepen
             </a>
           </HoverCom>
         </div>
