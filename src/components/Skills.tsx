@@ -135,9 +135,9 @@ const Skills = () => {
         </div>
       </div>
       <div className="flex gap-10 w-full justify-center px-2">
-        <Experience years="6+" title="Years of Experience" />
-        <Experience years="16+" title="Clients Worldwide" />
-        <Experience years="97+" title="Completed Projects " />
+        <Experience years="2+" title="Years of Experience" />
+        <Experience years="3+" title="Clients Worldwide" />
+        <Experience years="33+" title="Completed Projects " />
       </div>
     </div>
   );
